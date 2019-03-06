@@ -28,7 +28,7 @@
 1551888732 /home/vv2trainee8/Desktop/Sourabh/rtl_new/btb_write.v
 1551888732 /home/vv2trainee8/Desktop/Sourabh/rtl_new/btb.v
 1551888732 /home/vv2trainee8/Desktop/Sourabh/rtl_new/if_id_pipe.v
-1551892936 /home/vv2trainee8/Desktop/Sourabh/rtl_new/id_ex_pipe.v
-1551888732 /home/vv2trainee8/Desktop/Sourabh/rtl_new/hazard_unit.v
-1551892910 /home/vv2trainee8/Desktop/Sourabh/rtl_new/rv32i_core.v
+1551894415 /home/vv2trainee8/Desktop/Sourabh/rtl_new/id_ex_pipe.v
+1551893554 /home/vv2trainee8/Desktop/Sourabh/rtl_new/hazard_unit.v
+1551894632 /home/vv2trainee8/Desktop/Sourabh/rtl_new/rv32i_core.v
 1551888732 /home/vv2trainee8/Desktop/Sourabh/rtl_new/main_tb.v

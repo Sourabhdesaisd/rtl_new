@@ -283,6 +283,8 @@ module rv32i_core (
   //      .lui(lui_id),
         .alu_ctrl(alu_ctrl_id)
     );
+wire is_load_id;
+assign is_load_id = memtoreg_id;   // correct
 
     // =====================================================
     // 4) Hazard unit
@@ -292,7 +294,7 @@ module rv32i_core (
         .id_rs2(instr_id[24:20]),
         .opcode_id(instr_id[6:0]),
         .ex_rd(rd_ex),                 // rd in EX (ID/EX)
-        .ex_load_inst(memtoreg_ex),    // mem_read_ex from ID/EX
+        .ex_load_inst(is_load_ex),    // mem_read_ex from ID/EX
         .modify_pc_ex(ex_modify_pc),   // direct from EX branch unit
         .pc_en(hazard_pc_en),
         .if_id_en(hazard_if_id_en),
@@ -310,7 +312,7 @@ module rv32i_core (
     assign id_ex_en_out = hazard_id_ex_en;
     assign id_ex_flush_out = hazard_id_ex_flush;
     assign load_stall_out = hazard_load_stall;*/
-
+ 
     // =====================================================
     // 5) ID/EX pipeline register
     // =====================================================
@@ -372,7 +374,10 @@ module rv32i_core (
         .jalr_ex(jalr_ex),
      //   .auipc_ex(auipc_ex),
     //    .lui_ex(lui_ex),
-        .alu_ctrl_ex(alu_ctrl_ex)
+        .alu_ctrl_ex(alu_ctrl_ex),
+        .is_load_id(is_load_id),
+        .is_load_ex(is_load_ex)
+        
     );
 
    // assign id_ex_instr = instr_ex;

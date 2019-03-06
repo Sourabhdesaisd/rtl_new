@@ -33,6 +33,8 @@ module id_ex_pipe (
    // input  auipc,
   //  input  lui,
     input  [3:0] alu_ctrl,
+input  is_load_id,
+output reg is_load_ex,
 
     output reg [31:0] pc_ex,
    // output reg [31:0] instr_ex,
@@ -93,6 +95,7 @@ module id_ex_pipe (
            // auipc_ex            <= 1'b0;
           //  lui_ex              <= 1'b0;
             alu_ctrl_ex         <= 4'b0;
+            is_load_ex           <=1'b0;
         end
         // FLUSH must have priority over stall so mispredict/bubble is inserted
         else if (flush) begin
@@ -123,6 +126,8 @@ module id_ex_pipe (
          //   auipc_ex            <= 1'b0;
          //   lui_ex              <= 1'b0;
             alu_ctrl_ex         <= 4'b0;
+            is_load_ex           <=1'b0;
+            
         end
        /* else if (!en) begin
             // Stall: hold all values explicitly (prevents accidental updates)
@@ -181,6 +186,8 @@ module id_ex_pipe (
             //auipc_ex            <= auipc;
            // lui_ex              <= lui;
             alu_ctrl_ex         <= alu_ctrl;
+            is_load_ex             <= is_load_id;
+            
         end
     end
 endmodule
