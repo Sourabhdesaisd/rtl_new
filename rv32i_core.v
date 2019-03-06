@@ -26,9 +26,9 @@ module rv32i_core (
     // Hazard wires
     // -------------------------
     wire hazard_pc_en;
-    wire hazard_if_id_en;
-    wire hazard_if_id_flush;
-    wire hazard_id_ex_en;
+ //   wire hazard_if_id_en;
+  //  wire hazard_if_id_flush;
+  //  wire hazard_id_ex_en;
     wire hazard_id_ex_flush;
 //    wire hazard_load_stall;
 
@@ -231,8 +231,8 @@ module rv32i_core (
     // =====================================================
     if_id_pipe u_if_id (
         .clk(clk), .rst(rst),
-        .en(hazard_if_id_en),
-        .flush(hazard_if_id_flush),
+        .en(hazard_pc_en),
+        .flush(hazard_id_ex_flush),
         .pc_in(pc_if),
         .instr_in(instr_if),
         .predictedTaken_in(predictedTaken_if),
@@ -253,7 +253,7 @@ module rv32i_core (
         .clk(clk),
     //    .rst(rst),
         .instruction_in(instr_id),
-        .id_flush(hazard_if_id_flush),    // treat IF/ID flush as decode flush
+        .id_flush(hazard_id_ex_flush),    // treat IF/ID flush as decode flush
         // WB writeback inputs (from WB stage)
         .wb_wr_en(wb_write_en),
         .wb_wr_addr(wb_write_addr),
@@ -283,8 +283,8 @@ module rv32i_core (
   //      .lui(lui_id),
         .alu_ctrl(alu_ctrl_id)
     );
-wire is_load_id;
-assign is_load_id = memtoreg_id;   // correct
+//wire is_load_id;
+//assign is_load_id = memtoreg_id;// passed through ex 
 
     // =====================================================
     // 4) Hazard unit
@@ -293,14 +293,14 @@ assign is_load_id = memtoreg_id;   // correct
         .id_rs1(instr_id[19:15]),
         .id_rs2(instr_id[24:20]),
         .opcode_id(instr_id[6:0]),
-        .ex_rd(rd_ex),                 // rd in EX (ID/EX)
-        .ex_load_inst(is_load_ex),    // mem_read_ex from ID/EX
+     //   .ex_rd(rd_ex),                 // rd in EX (ID/EX)
+     //   .ex_load_inst(is_load_ex),    // mem_read_ex from ID/EX
         .modify_pc_ex(ex_modify_pc),   // direct from EX branch unit
         .pc_en(hazard_pc_en),
-        .if_id_en(hazard_if_id_en),
-        .if_id_flush(hazard_if_id_flush),
+      //  .if_id_en(hazard_if_id_en),
+     //   .if_id_flush(hazard_if_id_flush),
 //	 .im_flush(im_flush),
-        .id_ex_en(hazard_id_ex_en),
+      //  .id_ex_en(hazard_id_ex_en),
         .id_ex_flush(hazard_id_ex_flush)
      //   .load_stall(hazard_load_stall)
     );
@@ -318,7 +318,7 @@ assign is_load_id = memtoreg_id;   // correct
     // =====================================================
     id_ex_pipe u_id_ex (
         .clk(clk), .rst(rst),
-        .en(hazard_id_ex_en),
+        .en(hazard_pc_en),
         .flush(hazard_id_ex_flush),
         .pc_id(pc_id),
       //  .instr_id(instr_id),

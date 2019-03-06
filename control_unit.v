@@ -66,7 +66,8 @@ module control_unit(
        		 alu_ctrl = 4'b0000;
 		
                 ex_alu_src = 1'b1;// mem_read = 1'b1; 
-                wb_reg_file = 1'b1; memtoreg = 1'b1;
+                wb_reg_file = 1'b1;
+                memtoreg = 1'b1;
                 case (func3)
                     3'b000: mem_load_type = 3'b000; // LB
                     3'b001: mem_load_type = 3'b001; // LH

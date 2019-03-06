@@ -2,8 +2,8 @@
 1551892891 /home/vv2trainee8/Desktop/Sourabh/rtl_new/inst_mem.v
 1551888732 /home/vv2trainee8/Desktop/Sourabh/rtl_new/pc_reg.v
 1551888732 /home/vv2trainee8/Desktop/Sourabh/rtl_new/if_stage_simple_btb.v
-1551889766 /home/vv2trainee8/Desktop/Sourabh/rtl_new/register_file.v
-1551888883 /home/vv2trainee8/Desktop/Sourabh/rtl_new/control_unit.v
+1551898553 /home/vv2trainee8/Desktop/Sourabh/rtl_new/register_file.v
+1551900015 /home/vv2trainee8/Desktop/Sourabh/rtl_new/control_unit.v
 1551889791 /home/vv2trainee8/Desktop/Sourabh/rtl_new/top_decode.v
 1551888732 /home/vv2trainee8/Desktop/Sourabh/rtl_new/decode_unit.v
 1551888732 /home/vv2trainee8/Desktop/Sourabh/rtl_new/arithmetic_unit32.v
@@ -28,7 +28,7 @@
 1551888732 /home/vv2trainee8/Desktop/Sourabh/rtl_new/btb_write.v
 1551888732 /home/vv2trainee8/Desktop/Sourabh/rtl_new/btb.v
 1551888732 /home/vv2trainee8/Desktop/Sourabh/rtl_new/if_id_pipe.v
-1551894415 /home/vv2trainee8/Desktop/Sourabh/rtl_new/id_ex_pipe.v
-1551893554 /home/vv2trainee8/Desktop/Sourabh/rtl_new/hazard_unit.v
-1551894632 /home/vv2trainee8/Desktop/Sourabh/rtl_new/rv32i_core.v
+1551900455 /home/vv2trainee8/Desktop/Sourabh/rtl_new/id_ex_pipe.v
+1551900456 /home/vv2trainee8/Desktop/Sourabh/rtl_new/hazard_unit.v
+1551900511 /home/vv2trainee8/Desktop/Sourabh/rtl_new/rv32i_core.v
 1551888732 /home/vv2trainee8/Desktop/Sourabh/rtl_new/main_tb.v

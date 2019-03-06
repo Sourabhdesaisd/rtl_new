@@ -109,7 +109,7 @@ set id [waveform add -signals  {
 	{wave::main_tb.dut.u_id_ex.rd_ex[4:0]}
 	} ]
 set id [waveform add -signals  {
-	wave::main_tb.dut.u_hazard.ex_load_inst
+	wave::main_tb.dut.u_hazard.modify_pc_ex
 	} ]
 
 waveform xview limits 946ns 1010ns

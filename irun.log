@@ -1,5 +1,5 @@
 irun(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
-TOOL:	irun(64)	15.20-s051: Started on Mar 06, 2019 at 23:20:39 IST
+TOOL:	irun(64)	15.20-s051: Started on Mar 07, 2019 at 00:58:33 IST
 irun
 	-access +rwc
 	-f compile.f
@@ -60,9 +60,9 @@ irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,15): cds.lib Permission denied '
 DEFINE rfLib_new	/home/install/FOUNDRY/rfLib_new
 |
 irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,19): cds.lib Invalid path '/home/install/FOUNDRY/rfLib_new' (cds.lib command ignored).
-Recompiling... reason: file './hazard_unit.v' is newer than expected.
-	expected: Wed Mar  6 21:42:12 2019
-	actual:   Wed Mar  6 23:02:34 2019
+Recompiling... reason: file './hazard_unit.v' is older than expected.
+	expected: Thu Mar  7 01:00:01 2019
+	actual:   Thu Mar  7 00:57:36 2019
 DEFINE gpdk045		$ANALOG/45nm/gpdk045		
 |
 irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,15): cds.lib Permission denied '/tools/cadence/FOUNDRY/analog/45nm/gpdk045' (cds.lib command ignored).
@@ -75,8 +75,8 @@ ncvlog: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,15): cds.lib Permission denied
 DEFINE rfLib_new	/home/install/FOUNDRY/rfLib_new
 |
 ncvlog: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,19): cds.lib Invalid path '/home/install/FOUNDRY/rfLib_new' (cds.lib command ignored).
-file: id_ex_pipe.v
-	module worklib.id_ex_pipe:v
+file: hazard_unit.v
+	module worklib.hazard_unit:v
 		errors: 0, warnings: 0
 file: rv32i_core.v
 	module worklib.rv32i_core:v
@@ -113,22 +113,25 @@ ncvlog_cg: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,15): cds.lib Permission den
 DEFINE rfLib_new	/home/install/FOUNDRY/rfLib_new
 |
 ncvlog_cg: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,19): cds.lib Invalid path '/home/install/FOUNDRY/rfLib_new' (cds.lib command ignored).
-		worklib.id_ex_pipe:v <0x2ff16d93>
-			streams:   4, words:  8510
-		worklib.rv32i_core:v <0x5c07b302>
+		worklib.hazard_unit:v <0x1463dc02>
+			streams:   2, words:  1440
+		worklib.rv32i_core:v <0x5761398f>
 			streams:   6, words:   831
 	Building instance specific data structures.
+        .is_load_id(is_load_id),
+                             |
+ncelab: *W,CSINFI (./rv32i_core.v,378|29): implicit wire has no fanin (main_tb.dut.is_load_id).
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		               Instances  Unique
 		Modules:              34      33
-		Registers:           104     102
-		Scalar wires:         89       -
+		Registers:           101      99
+		Scalar wires:         85       -
 		Expanded wires:      128       4
 		Vectored wires:      103       -
 		Always blocks:        30      28
 		Initial blocks:        5       5
-		Cont. assignments:    64     108
+		Cont. assignments:    63     106
 		Pseudo assignments:   10      10
 	Writing initial simulation snapshot: worklib.main_tb:v
 DEFINE gpdk045		$ANALOG/45nm/gpdk045		
@@ -144,4 +147,4 @@ SIMULATION DONE
 Simulation complete via $finish(1) at time 1010 NS + 0
 ./main_tb.v:66         $finish;
 ncsim> exit
-TOOL:	irun(64)	15.20-s051: Exiting on Mar 06, 2019 at 23:20:39 IST  (total: 00:00:00)
+TOOL:	irun(64)	15.20-s051: Exiting on Mar 07, 2019 at 00:58:33 IST  (total: 00:00:00)
