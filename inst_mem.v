@@ -14,9 +14,9 @@ module inst_mem (
     reg [31:0] mem [0:1023];
    
  integer i;
-    initial begin
+/*    initial begin
         $readmemh("instructions.hex", mem);  // optional
-    end 
+    end */
 
 always@(posedge clk or posedge rst)
 begin

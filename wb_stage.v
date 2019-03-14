@@ -10,7 +10,7 @@ module wb_stage (
 
     // ---------------- Register File Connection ----------------
     output wire [31:0] wb_write_data,      // data written into regfile
-    output wire [4:0]  wb_write_addr,      // write register number
+  //  output wire [4:0]  wb_write_addr,      // write register number
     output wire        wb_write_en         // regfile write enable
 );
 
@@ -18,9 +18,11 @@ module wb_stage (
     assign wb_write_data = memtoreg_wb ? load_data_wb : alu_result_wb;
 
     // Pass-through destination register number
-    assign wb_write_addr = rd_wb;
+  //  assign wb_write_addr = rd_wb;
 
     // Write enable: only if RegWrite asserted and rd != x0 (avoid writing x0)
     assign wb_write_en = (wb_reg_file_wb && (rd_wb != 5'd0));
 
 endmodule
+
+
